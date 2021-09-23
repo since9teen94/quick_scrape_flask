@@ -12,13 +12,14 @@ elems = []
 
 for element in elements[2:]:
 
-    # class_element = element.attrs.get("class")
+    class_element = element.attrs.get("class")
     a_num_element = element.find("b").text.strip()
     abb_element = element.find("abbr").text.strip()
     name_element = element.find("em").text.strip()
     weight_element = element.find("data").text.strip()
 
-    new_element = [a_num_element, abb_element, name_element, weight_element]
+    new_element = [a_num_element, abb_element, name_element, weight_element, class_element]
     elems.append(new_element)
 
-# print(elems)
+if __name__=='__main__':
+    print(elems)

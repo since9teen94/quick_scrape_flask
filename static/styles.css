@@ -1,7 +1,9 @@
+/* CSS RESET */
 * {
         margin: 0px;
         padding: 0px;
 }
+/* Main Styles */
 #wrapper {
         width: 90%;
         height: auto;
@@ -14,6 +16,7 @@
         justify-content: center;
 }
 .element {
+        outline: 1px solid black;
         width: 100px;
         height: auto;
         text-align: center;
@@ -38,4 +41,16 @@
 }
 .element > p:last-child {
         font-weight: bold;
+}
+.s {
+        background-color: yellow;
+}
+.p {
+        background-color: lightblue;
+}
+.d {
+        background-color: lightgreen;
+}
+.f {
+        background-color: pink;
 }

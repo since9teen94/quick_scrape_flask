@@ -1,5 +1,5 @@
-from scrape import elems
 from flask import Flask, render_template
+from scrape import elems
 
 app = Flask(__name__)
 

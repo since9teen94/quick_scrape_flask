@@ -11,7 +11,7 @@
         <body>
                 <div id="wrapper">
                         {% for element in elements %}
-                        <div class="element">
+                        <div class="element {% if 's' in element.4 %}s{% elif 'p' in element.4 %}p{% elif 'd' in element.4 %}d{% elif 'f' in element.4 %}f{% endif %}">
                                 <p>{{element.0}}</p>
                                 <p>{{element.1}}</p>
                                 <p>{{element.2}}</p>
