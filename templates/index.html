@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8" />
+                <title>Periodic Table</title>
+                <link
+                        rel="stylesheet"
+                        href="{{url_for('static', filename='styles.css')}}"
+                />
+        </head>
+        <body>
+                <div id="wrapper">
+                        {% for element in elements %}
+                        <div class="element">
+                                <p>{{element.0}}</p>
+                                <p>{{element.1}}</p>
+                                <p>{{element.2}}</p>
+                                <p>{{element.3}}</p>
+                        </div>
+                        {% endfor %}
+                </div>
+        </body>
+</html>

@@ -1,0 +1,41 @@
+* {
+        margin: 0px;
+        padding: 0px;
+}
+#wrapper {
+        width: 90%;
+        height: auto;
+        margin: 10px auto;
+        padding: 20px 10px;
+        background-color: blue;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+}
+.element {
+        width: 100px;
+        height: auto;
+        text-align: center;
+        background-color: grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 3px;
+}
+.element > p:first-child {
+        font-size: x-large;
+        font-weight: bold;
+        margin-bottom: 5px;
+}
+.element > p:nth-child(2) {
+        font-size: large;
+        color: blue;
+}
+.element > p:nth-child(3) {
+        margin: 5px 0px;
+}
+.element > p:last-child {
+        font-weight: bold;
+}
