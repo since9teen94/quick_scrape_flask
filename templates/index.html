@@ -11,11 +11,36 @@
         <body>
                 <div id="wrapper">
                         {% for element in elements %}
-                        <div class="element {% if 's' in element.4 %}s{% elif 'p' in element.4 %}p{% elif 'd' in element.4 %}d{% elif 'f' in element.4 %}f{% endif %}">
+                        <div class="{% if 's' in element.4 %}element s{% elif 'p' in element.4 %}element p{% elif 'd' in element.4 %}element d{% elif 'f' in element.4 %}element f{% else %}hidden{% endif %}">
+                                {% if 'None' in element %}
+                                {% else %}
                                 <p>{{element.0}}</p>
                                 <p>{{element.1}}</p>
                                 <p>{{element.2}}</p>
                                 <p>{{element.3}}</p>
+                                {% endif %}
+                        </div>
+                        {% endfor %}
+                        {% for lanthanide in lanthanides %}
+                        <div class="{% if 's' in lanthanide.4 %}top element s{% elif 'p' in lanthanide.4 %}top element p{% elif 'd' in lanthanide.4 %}top element d{% elif 'f' in lanthanide.4 %}top element f{% else %}top hidden{% endif %}">
+                                {% if 'None' in lanthanide %}
+                                {% else %}
+                                <p>{{lanthanide.0}}</p>
+                                <p>{{lanthanide.1}}</p>
+                                <p>{{lanthanide.2}}</p>
+                                <p>{{lanthanide.3}}</p>
+                                {% endif %}
+                        </div>
+                        {% endfor %}
+                        {% for actinide in actinides %}
+                        <div class="{% if 's' in actinide.4 %}element s{% elif 'p' in actinide.4 %}element p{% elif 'd' in actinide.4 %}element d{% elif 'f' in actinide.4 %}element f{% else %}hidden{% endif %}">
+                                {% if 'None' in actinide %}
+                                {% else %}
+                                <p>{{actinide.0}}</p>
+                                <p>{{actinide.1}}</p>
+                                <p>{{actinide.2}}</p>
+                                <p>{{actinide.3}}</p>
+                                {% endif %}
                         </div>
                         {% endfor %}
                 </div>
