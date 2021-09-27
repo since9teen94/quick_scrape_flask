@@ -1,18 +1,26 @@
 import requests
 from bs4 import BeautifulSoup
 
+# Quick scrape from ptable.com to find the basic information (atomic number, weight, name and abbreviation)
+# so that we can render a basic periodic table
+
 URL = "https://ptable.com/?lang=en#Properties"
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, "html.parser")
 table_elements = soup.find(id="Ptable")
+# The needed information was stored in list items inside of the #Ptable element
 elements = table_elements.find_all("li")
 
-elems = []
+# arr is a list of None and empty lists for spacing the periodic table
 arr =   [None,[],[],[],[],[]]
+# separating out the lanthanides and actinides
+elems = []
 lanths = []
 acts = []
 
+# A for loop to attain the information we are seeking followed by some manipulations to
+# make our grid spacing more like that of an actual periodic table
 for element in elements[2:]:
 
     class_element = element.attrs.get("class")
@@ -41,5 +49,6 @@ for x in range(2):
     acts.insert(0, arr)
     acts.append(arr)
 
+# Used for checking that desired information is being scraped
 if __name__=='__main__':
     print(elems)
